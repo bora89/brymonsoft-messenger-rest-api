@@ -28,16 +28,14 @@ const getUsers = async (req, res, next) => {
     return next(new HttpError('Could not find any users', 404));
   }
 
-  res
-    .status(200)
-    .json({
-      users: users.map(user => ({
-        id: user._id,
-        name: user.name,
-        imageUrl: user.imageUrl,
-        mobile: user.mobile,
-      })),
-    });
+  res.status(200).json({
+    users: users.map(user => ({
+      id: user._id,
+      name: user.name,
+      imageUrl: user.imageUrl,
+      mobile: user.mobile,
+    })),
+  });
 };
 
 const createUser = async (req, res, next) => {
@@ -60,9 +58,15 @@ const createUser = async (req, res, next) => {
     return next(new HttpError('Creating user failed, please try again', 500));
   }
 
-  res
-    .status(201)
-    .json({ message: 'User created successfully', user: createdUser });
+  res.status(201).json({
+    message: 'User created successfully',
+    user: {
+      id: createdUser._id,
+      name: createdUser.name,
+      imageUrl: createdUser.imageUrl,
+      mobile: createdUser.mobile,
+    },
+  });
 };
 
 exports.getUsers = getUsers;

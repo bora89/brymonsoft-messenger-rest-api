@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+const authRoutes = require('./routes/auth.routes');
 const usersRoutes = require('./routes/users.routes');
 const messagesRoutes = require('./routes/messages.routes');
 const HttpError = require('./models/http-error.model');
@@ -20,6 +21,7 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use('/api/login', authRoutes);
 app.use('/api/users', usersRoutes);
 app.use('/api/messages', messagesRoutes);
 
