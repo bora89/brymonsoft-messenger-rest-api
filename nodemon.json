@@ -1,0 +1,10 @@
+{
+  "env": {
+    "DB_USER": "dean-dimebag",
+    "DB_PASSWORD": "wNU2BELyB6Ff0YSO",
+    "DB_NAME": "messenger",
+    "JWT_KEY": "u2usibbnvmbAoVz24AZ5Kn2mMgFjepx6Ygdr65UUqZHpL2YEK",
+    "ADMIN_LOGIN": "admin",
+    "ADMIN_PASSWORD": "$2a$12$bgh3VzemhIM.OV9THcKJuu620MtIfdNVRBJFIE9V377RyWKo9grAu"
+  }
+}
